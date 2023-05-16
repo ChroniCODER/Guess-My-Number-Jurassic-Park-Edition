@@ -1,0 +1,29 @@
+logique system de difficulté 
+on arrive sur l' index 
+1 = check if '$_session' currentdiff isset {
+    si oui = appliquer a la page les variable definies par la dif set
+} sinon {
+    renvoyer utiliseur à title.html
+}
+
+
+
+<form id="difficulty" >
+          <p>Select your difficulty</p>
+          <div>
+            <input type="radio" name="difficulty" id="easyRadio" value="easy">
+            <label for="easy">EASY</label>
+          </div>
+          <div>
+            <input type="radio" name="difficulty" id="mediumRadio" value="medium" checked>
+            <label for="medium">MEDIUM</label>
+          </div>
+          <div>
+            <input type="radio" name="difficulty" id="hardRadio" value="hard" >
+            <label for="hard">HARD</label>
+          </div>
+          <div>
+            <button type="submit" class="btn valid" onclick="onButtonPlayClick()">PLAY</button>
+          </div>
+          <div>
+      </form>

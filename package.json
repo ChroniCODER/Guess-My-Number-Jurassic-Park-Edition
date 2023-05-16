@@ -1,0 +1,14 @@
+{
+  "name": "js---guess-my-number",
+  "version": "0.0.1",
+  "description": "guess my number JP edition",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "thomas L",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
