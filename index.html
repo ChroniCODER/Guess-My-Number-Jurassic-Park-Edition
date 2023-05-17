@@ -4,58 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-   <!-- <link rel="stylesheet" href="style2.css" /> -->
+    <link rel="stylesheet" href="style2.css" />
     <title>Guess My Number!</title>
   </head>
 
   <body>
-    <div class="displayTitle">
-      <header>
-        <img src="" name="logo">
-        <h1>Guess My Number!</h1>
-        <h2>JP Edition</h2>
-      </header>
+    <div class="crt-container">
+      <div class="game-window">
+        <div class="displayTitle">
+          <header>
+            <img src="" name="logo" />
+            <h1>Guess My Number!</h1>
+            <h2>Jurassic Park Edition</h2>
+          </header>
 
-      <main>
-      
-          <p>Select your difficulty</p>
+          <main>
+            <p>Select your difficulty</p>
 
-          <div>
-            <button class="diffButton" id="easyButton" value="easy" onclick="onButtonPlayClick()">EASY</button>
-          </div>
-          <div>
-            <button class="diffButton" id="mediumButton" value="medium" onclick="onButtonPlayClick()">MEDIUM</button>
-          </div>
-          <div>
-            <button class="diffButton" id="hardButton" value="hard" onclick="onButtonPlayClick()" >HARD</button>
-          </div>
-        
-      </main>    
+            <div>
+              <button class="diffButton" onclick="onButtonPlayClick('easy')">
+                EASY
+              </button>
+            </div>
+            <div>
+              <button class="diffButton" onclick="onButtonPlayClick('medium')">
+                MEDIUM
+              </button>
+            </div>
+            <div>
+              <button class="diffButton" onclick="onButtonPlayClick('hard')">
+                HARD
+              </button>
+            </div>
+          </main>
+        </div>
+
+        <div class="displayGame">
+          <header>
+            <h1>Guess My Number!</h1>
+            <p class="between">(Between 1 and XX)</p>
+            <button class="btn again" onclick="onButtonAgainClick()">
+              Again!
+            </button>
+            <div class="number">?</div>
+          </header>
+          <main>
+            <section class="left">
+              <input type="number" class="guess" onchange="verifyInput()" />
+              <button class="btn check" onclick="onButtonClick()">
+                Check!
+              </button>
+            </section>
+            <section class="right">
+              <p class="message">Start guessing...</p>
+              <p class="label-score">💯 Score: <span class="score">20</span></p>
+              <p class="label-highscore">
+                🥇 Highscore: <span class="highscore">0</span>
+              </p>
+            </section>
+          </main>
+        </div>
+      </div>
+
+      <script src="script.js"></script>
     </div>
-      
-    
-    <div class="displayGame">
-      <header>
-        <h1>Guess My Number!</h1>
-        <p class="between">(Between 1 and XX)</p>
-        <button class="btn again" onclick="onButtonAgainClick()">Again!</button>
-        <div class="number">?</div>
-      </header>
-      <main>
-        <section class="left">
-          <input type="number" class="guess" onchange="verifyInput()" />
-          <button class="btn check" onclick="onButtonClick()">Check!</button>
-        </section>
-        <section class="right">
-          <p class="message">Start guessing...</p>
-          <p class="label-score">💯 Score: <span class="score">20</span></p>
-          <p class="label-highscore">
-            🥇 Highscore: <span class="highscore">0</span>
-          </p>
-        </section>
-      </main>
-    </div>
-    
-  <script src="script.js"></script>
   </body>
 </html>
