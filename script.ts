@@ -172,7 +172,6 @@ function getHighScoreByDiffFromStorage(){
     return 0;
   }
   return parseInt(highScoreStr);
-
 }
 
 function displaySet(){
@@ -229,6 +228,21 @@ function docChanger(className: string, entrie: any, speed: number) {
   }, speed);
 }
 
+function magicWordGif(delay: number) {
+  const gifElement = document.getElementById('gif') as HTMLImageElement;
+  const audioElement = document.getElementById('audio') as HTMLAudioElement;
+
+  // Afficher le GIF
+  gifElement.style.display = 'block';
+
+  // Jouer le son
+  audioElement.play();
+
+  // Masquer le GIF après le délai spécifié
+  setTimeout(() => {
+    gifElement.style.display = 'none';
+  }, delay);
+}
 //initialisation de la valeur d'input
 
 let inputElement: HTMLInputElement = document.querySelector('.guess')!;
@@ -254,13 +268,15 @@ function onButtonClick() {
     currentScore -= 1;
     score.textContent = currentScore.toString();
     docChanger('number', '', 1);
-    numberElt.classList.add('error');
+    magicWordGif(3500);
+    //numberElt.classList.add('error');
   } else if (parsedValue < secretNumber) {
     docChanger('message', `${parsedValue} is less than the secret number`, 1);
     docChanger('number', '', 1);
+    magicWordGif(3500);
     currentScore -= 1;
     score.textContent = currentScore.toString();
-    numberElt.classList.add('error');
+    //numberElt.classList.add('error');
   }
   if (parsedValue === secretNumber) {
     docChanger('message', 'bonne réponse ! BRAVO ! ', 1);
